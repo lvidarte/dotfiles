@@ -1,0 +1,10 @@
+[app] (name=fbrun)
+  [Position]	(CENTER)	{0 0}
+  [Layer]	{2}
+[end]
+[group]
+    [app] (name=x-terminal-emulator) (class=X-terminal-emulator)
+    [end]
+[end]
+[app] (name=spotify) (class=Spotify)
+[end]

@@ -1,0 +1,15 @@
+------------------------------------------------------------
+/usr/bin/pip run on Sun Jun  1 23:55:00 2014
+Cannot uninstall requirement powerline, not installed
+
+Exception information:
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/pip/basecommand.py", line 104, in main
+    status = self.run(options, args)
+  File "/usr/lib/python2.7/dist-packages/pip/commands/uninstall.py", line 41, in run
+    requirement_set.uninstall(auto_confirm=options.yes)
+  File "/usr/lib/python2.7/dist-packages/pip/req.py", line 862, in uninstall
+    req.uninstall(auto_confirm=auto_confirm)
+  File "/usr/lib/python2.7/dist-packages/pip/req.py", line 410, in uninstall
+    raise UninstallationError("Cannot uninstall requirement %s, not installed" % (self.name,))
+UninstallationError: Cannot uninstall requirement powerline, not installed

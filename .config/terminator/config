@@ -1,0 +1,50 @@
+[global_config]
+  handle_size = 2
+  title_hide_sizetext = True
+  geometry_hinting = False
+  title_inactive_fg_color = "#a5a6a4"
+  suppress_multiple_term_dialog = True
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  title_receive_bg_color = "#300a24"
+  title_transmit_bg_color = "#333333"
+  tab_position = bottom
+  title_inactive_bg_color = "#111111"
+[keybindings]
+  group_all = None
+  go_up = <Ctrl><Shift>k
+  resize_up = <Ctrl><Shift><Alt>k
+  broadcast_group = <Ctrl><Shift>g
+  resize_left = <Ctrl><Shift><Alt>h
+  full_screen = None
+  go_prev = None
+  broadcast_all = <Ctrl><Shift>a
+  go_down = <Ctrl><Shift>j
+  go_right = <Ctrl><Shift>l
+  broadcast_off = <Ctrl><Shift>n
+  go_next = None
+  go_left = <Ctrl><Shift>h
+  resize_right = <Ctrl><Shift><Alt>l
+  resize_down = <Ctrl><Shift><Alt>j
+  ungroup_all = None
+[profiles]
+  [[default]]
+    scrollbar_position = hidden
+    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    visible_bell = True
+    background_image = None
+    scrollback_lines = 5000
+    use_system_font = False
+    foreground_color = "#ffffff"
+    update_records = False
+    font = Ubuntu Mono derivative Powerline 15
+    background_color = "#070707"
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
