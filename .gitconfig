@@ -1,0 +1,30 @@
+[user]
+	mail = lvidarte@gmail.com
+	name = Leo Vidarte
+	email = lvidarte@gmail.com
+[color]
+	branch = auto
+	status = auto
+	diff = auto
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	df = diff
+	dc = diff --cached
+	lg = log -p
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	log-merge = log -m --name-only
+	log-files-ish = show --pretty="format:" --name-only 
+	ls = ls-files
+	setup = ! "git init; git add .; git commit"
+	ls-ish = diff-tree --no-commit-id --name-only -r
+	show-ls-ish = show --pretty="format:" --name-only
+	ignore = update-index --assume-unchanged
+	unignore = update-index --no-assume-unchanged
+	ignored = !git ls-files -v | grep "^[[:lower:]]"
+[core]
+	autocrlf = input
+# vim: set noexpandtab :
