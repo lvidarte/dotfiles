@@ -1,1 +1,3 @@
 .vim/bundle/**/*
+*.sw[op]
+*.py[co]
