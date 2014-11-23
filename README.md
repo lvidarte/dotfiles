@@ -1,7 +1,9 @@
 dotfiles
 ========
 
-My home conf
+## Clone repo
+
+    git --recursive git@github:lvidarte/dotfiles.git
 
 ## Install Vim plugins
 
