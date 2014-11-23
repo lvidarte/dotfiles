@@ -12,6 +12,7 @@ Plugin 'moll/vim-bbye'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 filetype plugin indent on
