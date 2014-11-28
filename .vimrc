@@ -130,7 +130,7 @@ nnoremap <silent> sk :FufFile<CR>
 " Buffers
 nmap <C-n> :bnext!<CR>
 nmap <C-p> :bprevious!<CR>
-nmap <C-c> :Bdelete<CR>
+cnoremap qq Bdelete
 
 " Jump to another window
 nmap <C-j> <C-w>j
