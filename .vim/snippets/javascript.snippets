@@ -1,0 +1,74 @@
+snippet "
+	"${1}"
+snippet .
+	{
+		${1}
+	}
+snippet ;
+	[
+		${1}
+	]
+snippet i
+	${1}: ${2},
+snippet var
+	var ${1:name} = ${2:value};
+snippet $
+	$("${1:}")${2}
+snippet if
+	if (${1}) {${2}
+	}
+snippet el
+	else {
+		${1}
+	}
+snippet ife
+	if (${1}) {${2}
+	} else {
+	}
+snippet wh
+	while (${1}) {${2}
+	}
+snippet do
+	do {
+		${2}
+	} while (${1});
+snippet for
+	for (var ${2:i} = 0; $2 < ${1:element}.length; $2${3:++}) {
+		${4:$1[$2]}
+	}
+snippet f
+	function${1}(${2}) {
+	}
+snippet vf
+	var ${1:name} = function(${2}) {
+	};
+snippet ()
+	(function() {${1}
+	})();
+snippet con
+	console.log(${1});
+snippet c
+	${1}(${2});
+snippet proto
+	${1:class}.prototype.${2:method} = function(${3:args}) {${4}
+	}
+snippet ?
+	${1} ? ${2:true} : ${3:false};
+snippet switch
+	switch (${1:expresssion}) {
+		case ${2}:${3}
+			break;
+		default:
+	}
+snippet case
+	case ${1}:${2}
+snippet try
+	try {${1}
+	} catch(e) {
+	}
+snippet re
+	return ${1};
+snippet ready
+	$(document).ready(function() {
+		${1}
+	});

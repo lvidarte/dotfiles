@@ -1,0 +1,113 @@
+# ============================================================================
+# PYTHON
+# ============================================================================
+snippet #!
+	#!/usr/bin/env python
+	# -*- coding: utf-8 -*-
+
+snippet #!_
+	#!/usr/bin/env python
+	# -*- coding: utf-8 -*-
+
+	# File:        ${1:`Filename('$1.py', 'foo.py')`}
+	# Author:      ${2:`g:snips_author`}
+	# Description: ${3}
+	# Version:     ${4:$Id$}
+	${5}
+snippet coding
+	# -*- coding: utf-8 -*-
+
+snippet doc
+	"""${1:docstring}"""
+snippet doc_
+	"""
+	File:        ${1:`Filename('$1.py', 'foo.py')`}
+	Author:      ${2:`g:snips_author`}
+	Description: ${3}
+	Version:     $Id$
+	"""
+snippet from
+	from ${1:module} import ${2:name}
+snippet pdb
+	import pdb; pdb.set_trace()
+snippet log
+	import logging; logging.${1:debug}(${2})
+==============================================================================
+Control Flow
+==============================================================================
+snippet if
+	if ${1:expression}:${2}
+snippet elif
+	elif ${1:expression}:${2}
+snippet else
+	else:
+		
+snippet for
+	for ${1:item} in ${2:iterable}:${3}
+snippet forr
+	for ${1:item} in range(${2:10}):
+		${3:print($1)}
+snippet while
+	while ${1:expression}:${2}
+==============================================================================
+Functions
+==============================================================================
+snippet def
+	def ${1:name}(${2:self}${3}):${4}
+snippet def_
+	def ${1:name}(self, ${2:**kwargs}):
+		"""${3:Docstring for $1.}"""${4}
+		for key in kwargs:
+			settatr(self, key, kwargs[key])
+snippet init
+	def __init__(self${1}):${2}
+snippet lambda
+	lambda ${2:arguments}: ${3:expression}
+==============================================================================
+Class
+==============================================================================
+snippet class
+	class ${1:ClassName}(${2:object}):${3}
+snippet class_
+	class ${1:ClassName}(${2:object}):
+
+		def __init__(self${3:, **kwargs}):${4}
+snippet main
+	if __name__ == '__main__':
+		
+==============================================================================
+Exceptions
+==============================================================================
+snippet try
+	try:
+		${1:pass}
+	except ${2:Exception}, ${3:e}:
+		${4:raise $3}
+snippet try_ try-except
+	try:
+		${1:pass}
+	except ${2:Exception}, ${3:e}:
+		${4:raise $3}
+snippet try_ try-except-else
+	try:
+		${1:pass}
+	except ${2:Exception}, ${3:e}:
+		${4:raise $3}
+	else:
+		${5:pass}
+snippet try_ try-except-finally
+	try:
+		${1:pass}
+	except ${2:Exception}, ${3:e}:
+		${4:raise $3}
+	finally:
+		${5:pass}
+snippet try_ try-except-else-finally
+	try:
+		${1:pass}
+	except ${2:Exception}, ${3:e}:
+		${4:raise $3}
+	else:
+		${5:pass}
+	finally:
+		${6:pass}

@@ -1,0 +1,144 @@
+snippet $
+	$${1} = ${2};
+snippet array
+	$${1:arrayName} = array('${2}' => ${3});${4}
+snippet case
+	case '${1:value}':
+		${2}
+		break;${3}
+snippet class
+	class ${2:ClassName}
+	{
+		${3}
+		function ${4:__construct}(${5})
+		{
+			${6}
+		}
+	}
+snippet defd
+	${1}defined('${2}')${3}
+snippet def
+	define('${1}'${2});${3}
+snippet doc_cp
+	/**
+	 * ${1:undocumented class}
+	 *
+	 * @package ${2:default}
+	 * @author ${3:`g:snips_author`}
+	 */${4}
+snippet doc_f
+	/**
+	 * $2
+	 * @return ${4:void}
+	 * @author ${5:`g:snips_author`}
+	 */
+	${1:public }function ${2:name}(${3})
+	{
+		${6}
+	}
+snippet doc_h
+	/**
+	 * ${1}
+	 *
+	 * @author ${2:`g:snips_author`}
+	 * @version ${3:$Id$}
+	 * @copyright ${4:$2}, `strftime('%d %B, %Y')`
+	 * @package ${5:default}
+	 */
+snippet doc_i
+	/**
+	 * $1
+	 * @package ${2:default}
+	 * @author ${3:`g:snips_author`}
+	 */
+	interface ${1:someClass} {
+		${4}
+	}
+snippet do
+	do {
+		${2}
+	} while (${1});
+snippet ec
+	echo "${1}"${2};
+snippet elseif
+	elseif (${1}) {
+		${2}
+	}
+snippet else
+	else {
+		${1}
+	}
+snippet foreachk
+	foreach ($${1:variable} as $${2:key} => $${3:value}) {
+		${4}
+	}
+snippet foreach
+	foreach ($${1:variable} as $${2:key}) {
+		${3}
+	}
+snippet for
+	for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
+		${4}
+	}
+snippet fun
+	${1:public }function ${2:name}(${3})
+	{
+	}
+snippet get
+	$_GET['${1}']${2}
+snippet globals
+	$GLOBALS['${1:variable}']${2: = }${3:something}${4:;}${5}
+snippet ife
+	if (${1}) {
+		${2}
+	} else {
+	}
+snippet if
+	if (${1}) {
+		${2}
+	}
+snippet inc1
+	include_once "${1:file}";${2}
+snippet inc
+	include "${1:file}";${2}
+snippet log
+	error_log(var_export(${1}, true));${2}
+snippet php
+	<?php
+	${1}
+snippet post
+	$_POST['${1}']${2}
+snippet req1
+	require_once "${1:file}";${2}
+snippet req
+	require "${1:file}";${2}
+snippet request
+	$_REQUEST['${1}']${2}
+snippet session
+	$_SESSION['${1}']${2}
+snippet switch
+	switch ($${1:variable}) {
+		case '${2:value}':
+			${3}
+			break;
+		${5}
+		default:
+			${4}
+			break;
+	}
+snippet t
+	$${1:retVal} = (${2}) ? ${3:a} : ${4:b};${5}
+snippet var
+	var_export(${1});${2}
+snippet wh
+	while (${1}) {
+		${2}
+	}
+snippet pp
+	print('<pre style="white-space:pre-wrap">' . print_r($${1}, true) . '</pre>');
+snippet dp
+	die('<pre style="white-space:pre-wrap">' . print_r($${1}, true) . '</pre>');
+snippet qq
+	print('<pre style="white-space:pre-wrap">' . print_r(array('sql'=>$this->query->getSql(),'parameters'=>$this->query->getParameters()), true) . '</pre>');
+snippet dq
+	die('<pre style="white-space:pre-wrap">' . print_r(array('sql'=>$this->query->getSql(),'parameters'=>$this->query->getParameters()), true) . '</pre>');

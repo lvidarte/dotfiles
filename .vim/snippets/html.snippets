@@ -1,0 +1,589 @@
+# ============================================================================
+# BLOCK
+# ============================================================================
+snippet b
+	<${1:div}${2}>${3}</$1>
+snippet B
+	<${1:div}${2}>
+	</$1>
+snippet b_
+	<${1:div} class="${3}">${4}</$1>
+snippet bb_
+	<${1:div} class="${3}">
+	</$1>
+snippet h
+	<h${1:1}${2}>${3}</h$1>
+snippet p
+	<p>${1}</p>
+snippet div
+	<div class="${1}">${2}</div>
+snippet div_
+	<div class="${1}">
+		${2}
+	</div>
+# ============================================================================
+# INLINE
+# ============================================================================
+snippet i
+	<${1:span}>${2}</$1>${3}
+snippet i_
+	<${1:span} id="${2}" class="${3}">${4}</$1>${5}
+snippet em
+	<em>${1}</em>
+snippet strong
+	<strong>${1}</strong>
+# ============================================================================
+# LINKS
+# ============================================================================
+snippet a
+	<a href="${1}"${2}>${3}</a>
+snippet mailto
+	<a href="mailto:${1:email?subject=feedback}" title="${2}">${3:$1}</a>
+snippet mailto_
+	<a href="mailto:${1:email?subject=feedback}" title="${2}" id="${3}" class="${4}">${5:$1}</a>
+# ============================================================================
+# LISTS
+# ============================================================================
+snippet li
+	<li>${1}</li>
+snippet li_
+	<li>
+		${1}
+	</li>
+snippet ol
+	<ol>
+		${1}
+	</ol>
+snippet ul
+	<ul>
+		${1}
+	</ul>
+# ============================================================================
+# IMAGE
+# ============================================================================
+snippet img
+	<img src="${1}"${2}>${3}
+# ============================================================================
+# BR
+# ============================================================================
+snippet br
+	<br />
+# ============================================================================
+# FORM
+# ============================================================================
+snippet form
+	<form action="${1}" method="${2:post}" name="${3:}" id="${4:$3}">${5}
+	</form>
+snippet form_
+	<form action="${1}" method="${2:post}" name="${3:}" id="${4:$3}" accept-charset="utf-8">
+	  <p><input type="submit" value="Submit" name="submit" /></p>
+	</form>
+snippet label
+	<label for="${1:id}">${2:label}</label>
+snippet in
+	<input type="${1:text}" name="${2}"${3}>
+snippet input
+	<input type="${1:text}" name="${2:}" id="${3:$2}" value="${4}" />${5}
+snippet textarea
+	<textarea name="${1:}" id="${2:$1}" rows="${3:8}" cols="${4:40}">${5}</textarea>${6}
+snippet select
+	<select name="${1:}" id="${2:$1}">${3}
+	</select>
+snippet option
+	<option value="${1:}">${2:$1}</option>${3}
+# ============================================================================
+# HTML
+# ============================================================================
+snippet html5
+	<!doctype html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+	</head>
+	<body>
+	</body>
+	</html>
+snippet htmljq 
+	<!doctype html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script>
+		$(function() {
+			${2}
+		})
+		</script>
+	</head>
+	<body>
+
+	</body>
+	</html>
+snippet htmlcs
+	<!doctype html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script src="http://jashkenas.github.com/coffee-script/extras/coffee-script.js"></script>
+		<script type="text/coffeescript">
+		$->
+			${2}
+		</script>
+	</head>
+	<body>
+	
+	</body>
+	</html>
+snippet html5_
+	<!doctype html>
+	<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<title>Test</title>
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li><a href="" title="">Link 1</a></li>
+				<li><a href="" title="">Link 2</a></li>
+			</ul>
+		</nav>
+		<article>
+			<h1>Title</h1>
+			<p>Paragraph</p>
+		</article>
+		<footer>
+			<p><small>Foot</small></p>
+		</footer>
+	</body>
+	</html>
+snippet html
+	<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	</head>
+
+	<body>
+
+		${2}
+
+	</body>
+	</html>
+snippet html_
+	<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<meta name="author" content="`g:snips_author`" />
+
+		<script type="text/javascript" src="${2}"></script>
+		<link rel="stylesheet" href="${3}" type="text/css" media="screen" />
+	</head>
+
+	<body>
+
+		${4}
+
+	</body>
+	</html>
+snippet head
+	<head>
+	  <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	  <title>${1:Page Title}</title>
+	  ${2}
+	</head>
+snippet meta
+	<meta name="${1}" content="${2}" />
+snippet body
+	<body id="${1}">
+		${2}
+	</body>
+==============================================================================
+DOCTYPE
+==============================================================================
+snippet doctype xhtml 1
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+snippet doctype xhtml 1
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+snippet doctype html 4
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""
+	"http://www.w3.org/TR/html4/loose.dtd">
+snippet doctype html 5
+	<!DOCTYPE HTML>
+snippet doctype html 4
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN"
+	"http://www.w3.org/TR/html4/frameset.dtd">
+snippet doctype xhtml 1
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+snippet doctype xhtml 1
+	<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+snippet doctype html 4
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""
+	"http://www.w3.org/TR/html4/strict.dtd">
+# ============================================================================
+# STYLE
+# ============================================================================
+snippet style
+	<link rel="stylesheet" href="${2:file}.css" type="text/css" media="screen" />
+snippet style_
+	<style type="text/css" media="screen">
+		${1}
+	</style>
+snippet ifie
+	<!--[if IE ${1:6}]>${2}<![endif]-->${3}
+# ============================================================================
+# SCRIPT
+# ============================================================================
+snippet script_
+	<script src="${1:file}.js"></script>
+snippet script
+	<script>
+		${1}
+	</script>
+snippet scriptc
+	<script type="text/coffeescript">
+		${1}
+	</script>
+snippet jquery
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+snippet coffee
+	<script src="http://jashkenas.github.com/coffee-script/extras/coffee-script.js"></script>
+# ============================================================================
+# TABLES
+# ============================================================================
+snippet table 0x0
+	<table class="${1}">
+		${2}
+	</table>
+snippet table 3x2 titles top
+	<table class="${1}">
+		<tr>
+			<th>${2}</th>
+			<th>${3}</th>
+			<th>${4}</th>
+		</tr>
+		<tr>
+			<td>${5}</td>
+			<td>${6}</td>
+			<td>${7}</td>
+		</tr>
+		<tr>
+			<td>${8}</td>
+			<td>${9}</td>
+			<td>${10}</td>
+		</tr>
+	</table>
+snippet table 5x5 titles top
+	<table class="${1}">
+		<tr>
+			<th>${2}</th>
+			<th>${7}</th>
+			<th>${12}</th>
+			<th>${17}</th>
+			<th>${22}</th>
+		</tr>
+		<tr>
+			<td>${3}</td>
+			<td>${8}</td>
+			<td>${13}</td>
+			<td>${18}</td>
+			<td>${23}</td>
+		</tr>
+		<tr>
+			<td>${4}</td>
+			<td>${9}</td>
+			<td>${14}</td>
+			<td>${19}</td>
+			<td>${24}</td>
+		</tr>
+		<tr>
+			<td>${5}</td>
+			<td>${10}</td>
+			<td>${15}</td>
+			<td>${20}</td>
+			<td>${25}</td>
+		</tr>
+		<tr>
+			<td>${6}</td>
+			<td>${11}</td>
+			<td>${16}</td>
+			<td>${21}</td>
+			<td>${26}</td>
+		</tr>
+		<tr>
+			<td>${7}</td>
+			<td>${12}</td>
+			<td>${17}</td>
+			<td>${22}</td>
+			<td>${27}</td>
+		</tr>
+	</table>
+snippet table 3x2
+	<table class="${1}">
+		<tr>
+			<td>${2}</td>
+			<td>${3}</td>
+			<td>${4}</td>
+		</tr>
+		<tr>
+			<td>${5}</td>
+			<td>${6}</td>
+			<td>${7}</td>
+		</tr>
+	</table>
+snippet table 5x5 titles left
+	<table class="${1}">
+		<tr>
+			<th>${2}</th>
+			<td>${7}</td>
+			<td>${12}</td>
+			<td>${17}</td>
+			<td>${22}</td>
+			<td>${27}</td>
+		</tr>
+		<tr>
+			<th>${3}</th>
+			<td>${8}</td>
+			<td>${13}</td>
+			<td>${18}</td>
+			<td>${23}</td>
+			<td>${28}</td>
+		</tr>
+		<tr>
+			<th>${4}</th>
+			<td>${9}</td>
+			<td>${14}</td>
+			<td>${19}</td>
+			<td>${24}</td>
+			<td>${29}</td>
+		</tr>
+		<tr>
+			<th>${5}</th>
+			<td>${10}</td>
+			<td>${15}</td>
+			<td>${20}</td>
+			<td>${25}</td>
+			<td>${30}</td>
+		</tr>
+		<tr>
+			<th>${6}</th>
+			<td>${11}</td>
+			<td>${16}</td>
+			<td>${21}</td>
+			<td>${26}</td>
+			<td>${31}</td>
+		</tr>
+	</table>
+snippet table 5x5
+	<table class="${1}">
+		<tr>
+			<td>${2}</td>
+			<td>${3}</td>
+			<td>${4}</td>
+			<td>${5}</td>
+			<td>${6}</td>
+		</tr>
+		<tr>
+			<td>${7}</td>
+			<td>${8}</td>
+			<td>${9}</td>
+			<td>${10}</td>
+			<td>${11}</td>
+		</tr>
+		<tr>
+			<td>${12}</td>
+			<td>${13}</td>
+			<td>${14}</td>
+			<td>${15}</td>
+			<td>${16}</td>
+		</tr>
+		<tr>
+			<td>${17}</td>
+			<td>${18}</td>
+			<td>${19}</td>
+			<td>${20}</td>
+			<td>${21}</td>
+		</tr>
+		<tr>
+			<td>${22}</td>
+			<td>${23}</td>
+			<td>${24}</td>
+			<td>${25}</td>
+			<td>${26}</td>
+		</tr>
+	</table>
+snippet table 2x2
+	<table class="${1}">
+		<tr>
+			<td>${2}</td>
+			<td>${3}</td>
+		</tr>
+		<tr>
+			<td>${4}</td>
+			<td>${5}</td>
+		</tr>
+	</table>
+snippet table 2x2 titles left
+	<table class="${1}">
+		<tr>
+			<th>${2}</th>
+			<td>${4}</td>
+			<th>${6}</th>
+		</tr>
+		<tr>
+			<th>${3}</th>
+			<td>${5}</td>
+			<td>${7}</td>
+		</tr>
+	</table>
+snippet table 2x2 titles top
+	<table class="${1}">
+		<tr>
+			<th>${2}</th>
+			<th>${3}</th>
+		</tr>
+		<tr>
+			<td>${4}</td>
+			<td>${5}</td>
+		</tr>
+		<tr>
+			<td>${6}</td>
+			<td>${7}</td>
+		</tr>
+	</table>
+snippet table 3x2 titles left
+	<table class="${1}">
+		<tr>
+			<th>${2}</th>
+			<td>${4}</td>
+			<td>${6}</td>
+			<td>${8}</td>
+		</tr>
+		<tr>
+			<th>${3}</th>
+			<td>${5}</td>
+			<td>${7}</td>
+			<td>${9}</td>
+		</tr>
+	</table>
+
+# ============================================================================
+# TORNADO
+# ============================================================================
+snippet _
+	{{ ${1} }}${2}
+snippet __
+	{% ${1} %}${2}
+snippet ___
+	{% ${1:tag_name} %}
+	{% end %}
+snippet apply
+	{% apply ${1:function} %}${2}{% end %}
+snippet autoescape
+	{% autoescape ${1:function} %}
+snippet bk
+	{% block ${1:name} %}
+	{% end %}
+snippet block
+	{% block ${1:name} %}
+	{% end %}
+snippet bk_
+	{% block ${1:name} %}${2}{% end %}
+snippet block_
+	{% block ${1:name} %}${2}{% end %}
+snippet #
+	{% comment ${1} %}
+snippet #_
+	{% comment 
+		${1}
+	%}
+snippet elif
+	{% elif ${1:condition} %}
+snippet else
+	{% else %}
+snippet end
+	{% end %}
+snippet ext
+	{% extends "${1:filename}" %}
+snippet extends
+	{% extends "${1:filename}" %}
+snippet for
+	{% for ${1:var} in ${2:exp} %}
+	{% end %}
+snippet for_
+	{% for ${1:var} in ${2:exp} %}${3}{% end %}
+snippet from
+	{% from ${1:module} import ${2:name} %}
+snippet if
+	{% if ${1:condition} %}
+	{% end %}
+snippet if_
+	{% if ${1:condition} %}${2}{% end %}
+snippet import
+	{% import ${1:module} %}
+snippet inc
+	{% include "${1:filename}" %}
+snippet include
+	{% include "${1:filename}" %}
+snippet module
+	{% module ${1:expr} %}
+snippet raw
+	{% raw ${1:expr} %}
+snippet set
+	{% set ${1:x}=${2:y} %}
+snippet try
+	{% try %}
+		${1:expr}
+	{% except ${2} %}
+		${3:expr}
+	{% end %}
+snippet try_
+	{% try %}
+		${1:expr}
+	{% except ${2} %}
+		${3:expr}
+	{% finally %}
+		${4:expr}
+	{% end %}
+snippet while
+	{% while ${1:condition} %}
+	{% end %}
+snippet while_
+	{% while ${1:condition} %}${2}{% end %}
+# ============================================================================
+# LIBS
+# ============================================================================
+snippet jquery
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+snippet backbone
+	<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+snippet underscore
+	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+snippet kinetic
+	<script src="//cdnjs.cloudflare.com/ajax/libs/kineticjs/4.3.1/kinetic.min.js"></script>
+snippet libs
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/kineticjs/4.3.1/kinetic.min.js"></script>

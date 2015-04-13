@@ -13,6 +13,10 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'fatih/vim-go'
+"SnipMate
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 
 call vundle#end()
 filetype plugin indent on
@@ -101,9 +105,9 @@ autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
 " Jade
 autocmd BufNewFile,BufRead *.jade set filetype=jade
 " HTML
-autocmd BufNewFile,BufRead *.html set filetype=html.javascript
-" HTML
-autocmd BufNewFile,BufRead *.js set filetype=javascript foldmethod=indent foldlevelstart=1 foldnestmax=2
+autocmd BufNewFile,BufRead *.html set filetype=html.javascript ts=2 sts=2 sw=2
+" JS
+autocmd BufNewFile,BufRead *.js set filetype=javascript ts=2 sts=2 sw=2
 
 " Airline
 let g:airline_powerline_fonts = 1

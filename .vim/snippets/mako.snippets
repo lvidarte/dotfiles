@@ -1,0 +1,58 @@
+snippet $
+	${${1:exp}}
+snippet %
+	<%${1:tag}>
+snippet %%
+	<%
+		${1}
+	%>
+snippet page
+	<%page ${1}/>
+snippet include
+	<%include file="${1:header.html}"/>
+snippet def
+	<%def name="${1:func}()">
+		${2}
+	</%def>
+snippet namespace
+	<%namespace file="${1:file}.html" import="${2:*}"/>
+snippet inherit
+	<%inherit file="${1:base}.html"/>
+snippet doc
+	<%doc>
+		${1}
+	</%doc>
+snippet text
+	<%text2filter="${1:h}">
+		${1}
+	</%text>
+snippet if
+	% if ${1:cond}:
+		${2}
+	% endif
+snippet if_
+	<%
+		if ${1:cond}:
+			${2}
+	%>
+snippet elif
+	% elif ${1:cond}:
+		${2}
+snippet elif_
+	elif ${1:cond}:
+		${2}
+snippet else
+	% else:
+		${1}
+snippet else__
+	else:
+		${1}
+snippet for
+	% for ${1:item} in ${2:iterable}:
+		${3}
+	% endfor
+snippet for_
+	<%
+		for ${1:item} in ${2:iterable}:
+			${3}
+	%>
