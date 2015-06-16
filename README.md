@@ -3,7 +3,7 @@ dotfiles
 
 ## Clone repo
 
-    git --recursive git@github:lvidarte/dotfiles.git
+    git clone --recursive git@github.com:lvidarte/dotfiles.git
 
 ## Install Vim plugins
 
