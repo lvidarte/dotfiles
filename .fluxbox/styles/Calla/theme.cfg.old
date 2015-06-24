@@ -1,0 +1,124 @@
+style.name:		Calla
+style.author:		lyrae
+style.date:		Jan 27, 2007
+style.credits:		
+
+menu.title.font:			Ubuntu-10
+menu.frame.font:			Ubuntu-10
+toolbar.clock.font:			Ubuntu-10
+toolbar.workspace.font:			Ubuntu-10
+toolbar.iconbar.focused.font:		Ubuntu-10
+toolbar.iconbar.unfocused.font:		Ubuntu-10
+window.font:				Ubuntu-10
+#*font:     Marke Eigenbau-8
+#window.font: AvantGarde LT Medium-8
+#toolbar.clock.font: AvantGarde LT Medium-8
+#toolbar.workspace.font: AvantGarde LT Medium-8
+#toolbar.iconbar.focused.font: AvantGarde LT Medium-8
+#toolbar.iconbar.unfocused.font: AvantGarde LT Medium-8
+
+toolbar:		flat
+toolbar.color:		#433E2B
+toolbar.textColor:		#DADBC7
+toolbar.justify:		center
+toolbar.height:		20
+toolbar.borderWidth:		2
+toolbar.borderColor:		#433E2B
+toolbar.workspace:		flat
+toolbar.workspace.color:	#433E2B
+toolbar.workspace.textColor:		#DADBC7
+toolbar.iconbar.empty:		flat
+toolbar.iconbar.empty.color:	#433E2B
+toolbar.iconbar.focused:		flat
+toolbar.iconbar.focused.color:		#433E2B
+toolbar.iconbar.focused.textColor:		#1fbac2
+toolbar.iconbar.focused.justify:		center
+toolbar.iconbar.unfocused:		flat
+toolbar.iconbar.unfocused.color:	#433E2B
+toolbar.iconbar.unfocused.textColor:		#DADBC7
+toolbar.iconbar.unfocused.justify:		center
+toolbar.clock:		flat
+toolbar.clock.color:		#433E2B
+toolbar.clock.textColor:		#DADBC7
+toolbar.button:		flat
+toolbar.button.color:		#433E2B
+toolbar.button.picColor:		#A49C7D
+
+menu.title:		flat
+menu.title.color:		#433E2B
+menu.title.justify:		center
+menu.title.textColor:		#433E2B
+menu.title.font: DejaVu Sans-1
+menu.frame:		flat
+menu.frame.justify:		left
+menu.frame.color:		#DADBC7
+menu.frame.textColor:		#222222
+menu.frame.disableColor:		#c0c0c0
+menu.hilite:		flat
+menu.hilite.color:		#433E2B
+menu.hilite.textColor:		#1fbac2
+menu.itemHeight:		20
+menu.bevelWidth:		0
+menu.titleHeight:		6
+menu.borderColor:		#433E2B
+menu.borderWidth:		1
+menu.bullet:		empty
+menu.bullet.position:		Right
+
+window.title.focus:		flat
+window.title.focus.color:		#433E2B
+window.title.unfocus:		flat
+window.title.unfocus.color:			#433E2B
+window.title.height:		20
+window.label.focus:		flat
+window.label.focus.color:			#433E2B
+window.label.focus.textColor:		#1fbac2
+window.label.unfocus:		flat
+window.label.unfocus.color:                #433E2B
+window.label.unfocus.textColor:		#DADBC7
+window.button.focus:				flat
+window.button.focus.color:      		#
+window.button.focus.colorTo:      		#
+window.button.focus.picColor:		#
+window.button.unfocus:				flat
+window.button.unfocus.Color:		#
+window.button.unfocus.ColorTo:		#
+window.button.unfocus.picColor:		#
+window.button.pressed:				flat
+window.button.pressed.color:		#
+window.button.pressed.colorTo:		#
+window.button.pressed.picColor:		#
+window.close.pixmap:				close_focus.xpm
+window.close.unfocus.pixmap:		close_unfocus.xpm
+window.close.pressed.pixmap:		close_pressed.xpm
+window.iconify.pixmap:				min_focus.xpm
+window.iconify.unfocus.pixmap:		min_unfocus.xpm
+window.iconify.pressed.pixmap:		min_pressed.xpm
+window.maximize.pixmap:			max_focus.xpm
+window.maximize.unfocus.pixmap:	max_unfocus.xpm
+window.maximize.pressed.pixmap:	max_pressed.xpm
+window.stick.pixmap:				stick_focus.xpm
+window.stick.unfocus.pixmap:		stick_unfocus.xpm
+window.stick.pressed.pixmap:		stick_pressed.xpm
+window.stuck.pixmap:				stuck_focus.xpm
+window.stuck.unfocus.pixmap:		stuck_unfocus.xpm
+window.handle.focus:		flat
+window.handle.focus.color:		#433E2B
+window.handle.unfocus:		flat
+window.handle.unfocus.color:		#433E2B
+window.grip.focus:		flat
+window.grip.focus.color:		#433E2B
+window.grip.unfocus:		flat
+window.grip.unfocus.color:		#433E2B
+window.bevelWidth:		0
+window.shade:		true
+window.borderWidth:		4
+window.borderColor:		#433E2B
+window.justify:		left
+
+handleWidth:        4
+frameWidth:         1
+bevelWidth:         0
+borderWidth:        0
+borderColor:	    #433E2B
+
