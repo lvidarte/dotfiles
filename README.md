@@ -8,3 +8,10 @@ dotfiles
 ## Install Vim plugins
 
     vim +PluginInstall +qall
+
+## Shortcuts
+
+ - [i3](i3.md)
+ - [terminator](terminator.md)
+ - [tmux](tmux.md)
+ - [vim](vim.md)
