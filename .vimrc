@@ -136,6 +136,10 @@ nmap <C-n> :bnext!<CR>
 nmap <C-p> :bprevious!<CR>
 cnoremap qq Bdelete
 
+" Split window
+nmap <C-o> :sp<CR>
+nmap <S-e> :vs<CR>
+
 " Jump to another window
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
