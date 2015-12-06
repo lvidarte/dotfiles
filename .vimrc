@@ -138,7 +138,7 @@ cnoremap qq Bdelete
 
 " Split window
 nmap <C-o> :sp<CR>
-nmap <S-e> :vs<CR>
+nmap <C-e> :vs<CR>
 
 " Jump to another window
 nmap <C-j> <C-w>j
