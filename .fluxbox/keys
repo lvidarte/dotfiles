@@ -1,5 +1,14 @@
+# man fluxbox-keys
+#
+# Mod1 is the Alt key on the PC keyboard
+# Mod4 is usually a key branded with a familiar company logo
+
+
 # lock screen
-Control Mod1 L :Exec gnome-screensaver-command --lock
+Control Mod1 L :Exec xscreensaver-command -lock
+
+# print screen ($ xev)
+Print :Exec /usr/bin/xfce4-screenshooter
 
 # click on the desktop to get menus
 OnDesktop Mouse1 :HideMenus
@@ -27,6 +36,7 @@ OnWindow Mod1 Mouse2 :Lower
 
 # control-click a window's titlebar and drag to attach windows
 OnTitlebar Control Mouse1 :StartTabbing
+#OnTitlebar Mouse2 :StartTabbing
 
 # double click on the titlebar to shade
 OnTitlebar Double Mouse1 :Shade
@@ -158,3 +168,25 @@ Control Mod4 4 :TakeToWorkspace 4
 #Control Mod4 F10 :TakeToWorkspace 10
 #Control Mod4 F11 :TakeToWorkspace 11
 #Control Mod4 F12 :TakeToWorkspace 12
+
+# Move window
+Mod4 h :MoveLeft 10
+Mod4 l :MoveRight 10
+Mod4 j :MoveDown 10
+Mod4 k :MoveUp 10
+
+Shift Mod4 h :MoveLeft 1
+Shift Mod4 l :MoveRight 1
+Shift Mod4 j :MoveDown 1
+Shift Mod4 k :MoveUp 1
+
+# Resize window
+Control Mod4 h :ResizeHorizontal -10
+Control Mod4 l :ResizeHorizontal 10
+Control Mod4 j :ResizeVertical 10
+Control Mod4 k :ResizeVertical -10
+
+Shift Control Mod4 h :ResizeHorizontal -1
+Shift Control Mod4 l :ResizeHorizontal 1
+Shift Control Mod4 j :ResizeVertical 1
+Shift Control Mod4 k :ResizeVertical -1
