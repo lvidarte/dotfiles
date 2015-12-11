@@ -153,7 +153,8 @@ bar {
 # Commands
 
 bindsym $mod+Shift+x exec /usr/bin/thunar
-bindsym $mod+Shift+z exec xscreensaver-command -lock
+bindsym $mod+Shift+z exec /usr/bin/xscreensaver-command -lock
+bindsym Print exec /usr/bin/xfce4-screenshooter
 
 # Startup
 #exec --no-startup-id fbsetbg -c /home/xleo/Pictures/Wallpapers/blueprint_1920x1080.jpg
