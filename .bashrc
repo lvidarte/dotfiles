@@ -8,18 +8,13 @@ case $- in
       *) return;;
 esac
 
-export EDITOR=/usr/bin/vim.nox
 export PYTHONSTARTUP=$HOME/.pythonrc
-export LAI_MODULE_PATH=/home/xleo/src/lvidarte/lai-client
-export LAI_ENV_PATH=$LAI_MODULE_PATH/env
+export PATH=~/bin:~/go/bin:$PATH
+export GOPATH=~/go
 export SSH_USER=xleo
-export PROMPT_COMMAND='history -a'
-export SERVERS="webserver1 webserver2 dataserver1 dataserver2 jenkins staging graphite"
-
-export DB_HOST="localhost"
-export DB_USER="coquelux"
-export DB_PASS="031x"
-export DB_NAME="coquelux"
+export EDITOR=/usr/bin/vim.nox
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/opencv/2.4.11/lib/
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/opencv/3.0.0/lib
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -69,9 +64,19 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+function get_git_branch ()
+{
+    DIRTY=""
+    CLEAN="nothing to commit, working directory clean"
+    [ "`git status 2> /dev/null | tail -n1`" != "$CLEAN" ] && DIRTY='*'
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$DIRTY)/"
+}
+
 if [ "$color_prompt" = yes ]; then
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    PS1='\[\033[01;32m\]\h $(date +'%H:%M')\[\033[00m\] \[\033[01;34m\]\W\[\033[00m\]\[\033[01;33m\]$(get_git_branch)\[\033[00m\]\[\033[01;30m\] ▸ \[\033[00m\]'
+
+    source ~/.colors
+
+    PS1="\n${DARK_GRAY}\$?) ${LIGHT_GREEN}\h${COLOR_OFF}:${LIGHT_BLUE}\w${COLOR_OFF}${LIGHT_YELLOW}\$(get_git_branch)${COLOR_OFF}\n${DARK_GRAY}$> ${COLOR_OFF}"
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -93,9 +98,9 @@ if [ -x /usr/bin/dircolors ]; then
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
 fi
 
 # some more ls aliases
@@ -128,19 +133,15 @@ if ! shopt -oq posix; then
 fi
 
 # Functions
-function mkcd { mkdir -p $1 && cd $1; }
-
-function get_git_branch ()
-{
-    DIRTY=""
-    CLEAN="nothing to commit, working directory clean"
-    [ "`git status 2> /dev/null | tail -n1`" != "$CLEAN" ] && DIRTY='*'
-    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/⚡\1$DIRTY/"
-}
+function mkcd () { mkdir -p $1 && cd $1; }
 
 function ssh-aws ()
 {
-    ssh -i /home/xleo/.ssh/it-coquelux.pem ubuntu@$1
+    ssh -i /home/xleo/.ssh/it-coquelux.pem ubuntu@$1 2>/dev/null
+}
+function ssh-ecs ()
+{
+    ssh -i /home/xleo/.ssh/it-coquelux.pem ec2-user@$1
 }
 function scp-from-aws ()
 {
@@ -158,3 +159,71 @@ function xc()
         && cat $FILE | xclip -selection clipboard \
         && rm -f $FILE
 }
+function cat-to-clipboard()
+{
+    cat $1 | xclip -selection clipboard
+}
+function ssh-remove-key()
+{
+    local LINE=$1
+    sed -i ${LINE}d $HOME/.ssh/known_hosts
+}
+function r()
+{
+    local DIR=/tmp/ranger-last-dir
+    ranger --choosedir=$DIR $@
+    cd `cat $DIR`
+}
+function opencv2-compile()
+{
+    g++ -g -o ${1%.*} $1 \
+        -I/opt/opencv/2.4.11/include \
+        -L/opt/opencv/2.4.11/lib \
+        -lopencv_calib3d \
+        -lopencv_contrib \
+        -lopencv_core \
+        -lopencv_features2d \
+        -lopencv_flann \
+        -lopencv_gpu \
+        -lopencv_highgui \
+        -lopencv_imgproc \
+        -lopencv_legacy \
+        -lopencv_ml \
+        -lopencv_nonfree \
+        -lopencv_objdetect \
+        -lopencv_ocl \
+        -lopencv_photo \
+        -lopencv_stitching \
+        -lopencv_superres \
+        -lopencv_ts \
+        -lopencv_video \
+        -lopencv_videostab
+}
+function opencv3-compile()
+{
+    g++ -g -o ${1%.*} $1 \
+        -I/opt/opencv/3.0.0/include \
+        -L/opt/opencv/3.0.0/lib/ \
+        -lopencv_calib3d \
+        -lopencv_core \
+        -lopencv_features2d \
+        -lopencv_flann \
+        -lopencv_highgui \
+        -lopencv_imgcodecs \
+        -lopencv_imgproc \
+        -lopencv_ml \
+        -lopencv_objdetect \
+        -lopencv_photo \
+        -lopencv_shape \
+        -lopencv_stitching \
+        -lopencv_superres \
+        -lopencv_videoio \
+        -lopencv_video \
+        -lopencv_videostab
+}
+
+PATH="/home/xleo/perl5/bin${PATH+:}${PATH}"; export PATH;
+PERL5LIB="/home/xleo/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/xleo/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/xleo/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/xleo/perl5"; export PERL_MM_OPT;
