@@ -12,6 +12,7 @@
   title_inactive_bg_color = "#433e2b"
 [keybindings]
   toggle_zoom = <Primary><Shift>z
+  scaled_zoom = None
   group_all = None
   go_up = <Ctrl><Shift>k
   resize_up = <Ctrl><Shift><Alt>k
@@ -40,7 +41,7 @@
     foreground_color = "#ffffff"
     update_records = False
     copy_on_selection = True
-    background_color = "#1b1500"
+    background_color = "#300a24"
 [layouts]
   [[default]]
     [[[child1]]]

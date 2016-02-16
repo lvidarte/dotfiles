@@ -101,7 +101,7 @@ autocmd FileType lua set omnifunc=luacomplete#Complete ai et ts=4 sts=4 sw=4
 " Twig
 autocmd BufNewFile,BufRead *.twig set filetype=html.twig
 " Arduino
-autocmd BufNewFile,BufReadPost *.ino,*.pde set filetype=cpp
+autocmd BufNewFile,BufRead *.ino,*.pde set filetype=cpp
 " Jade
 autocmd BufNewFile,BufRead *.jade set filetype=jade
 " HTML
@@ -173,3 +173,6 @@ map <leader>t :w\|:!phpunit --colors %<CR>
 map <leader>l :w\|:!php -S localhost:3005<CR>
 map <leader>c :w\|:!php -l %<CR>
 map <leader>f :w\|:!php-cs-fixer fix % --level=all<CR>
+
+" GitGutter
+let g:gitgutter_max_signs = 2000

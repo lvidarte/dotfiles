@@ -7,13 +7,31 @@ snippet case
 		${2}
 		break;${3}
 snippet class
-	class ${2:ClassName}
+	class ${1:ClassName}
 	{
-		${3}
-		function ${4:__construct}(${5})
-		{
-			${6}
-		}
+
+	    function ${2:__construct}(${3})
+	    {
+	    }
+
+	}
+snippet Test
+	class ${1:ClassName} extends PHPUnit_Framework_TestCase
+	{
+
+	    ${2}
+
+	}
+snippet test
+	/** @test */
+	public function ${1:functionName}(${2})
+	{
+	    ${3}
+	}
+snippet fun
+	${1:public }function ${2:name}(${3})
+	{
+	    ${4}
 	}
 snippet defd
 	${1}defined('${2}')${3}
@@ -79,10 +97,6 @@ snippet foreach
 snippet for
 	for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
 		${4}
-	}
-snippet fun
-	${1:public }function ${2:name}(${3})
-	{
 	}
 snippet get
 	$_GET['${1}']${2}
