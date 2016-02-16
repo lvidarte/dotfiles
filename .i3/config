@@ -152,15 +152,21 @@ bar {
 
 # Commands
 
-bindsym $mod+Shift+x exec /usr/bin/thunar
-bindsym $mod+Shift+z exec /usr/bin/xscreensaver-command -lock
-bindsym Print exec /usr/bin/xfce4-screenshooter
+#bindsym $mod+Shift+x exec /usr/bin/thunar
+#bindsym $mod+Shift+z exec /usr/bin/xscreensaver-command -lock
+#bindsym Print exec /usr/bin/xfce4-screenshooter
+bindsym $mod+Shift+z exec gnome-screensaver-command --lock
+bindsym Print exec /usr/bin/gnome-screenshot
+bindsym $mod+Ctrl+w exec pactl set-sink-volume 1 +5%
+bindsym $mod+Ctrl+q exec pactl set-sink-volume 1 -5%
+
 
 # Startup
 #exec --no-startup-id fbsetbg -c /home/xleo/Pictures/Wallpapers/blueprint_1920x1080.jpg
 exec --no-startup-id setxkbmap -layout latam -option caps:escape
-exec --no-startup-id xscreensaver -no-splash &
-exec --no-startup-id nm-applet &
+#exec --no-startup-id xscreensaver -no-splash &
+#exec --no-startup-id nm-applet &
 exec --no-startup-id dropbox start &
 exec --no-startup-id xfce4-power-manager --no-daemon 2>&1 > /dev/null &
 exec --no-startup-id syndaemon -i 2 -K d &
+exec --no-startup-id gnome-session &
