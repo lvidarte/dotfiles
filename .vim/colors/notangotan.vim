@@ -18,7 +18,7 @@ let colors_name = "notangotan"
 " Default Colors
 "hi Normal           cterm=NONE      ctermfg=7       ctermbg=232
 hi Normal           cterm=NONE      ctermfg=7
-hi NonText          cterm=NONE      ctermfg=240
+hi NonText          cterm=NONE      ctermfg=236
 hi LineNR           cterm=NONE      ctermfg=245     ctermbg=233
 "hi Cursor       guibg=#d3d7cf
 "hi lCursor      guibg=#d3d7cf
@@ -41,7 +41,7 @@ hi Visual           cterm=reverse   ctermfg=230     ctermbg=238
 hi TabLine          cterm=NONE      ctermfg=243     ctermbg=234
 hi TabSel           cterm=bold      ctermfg=7       ctermbg=232
 hi TabLineFill      cterm=reverse   ctermfg=234     ctermbg=236
-hi ColorColumn      cterm=NONE      ctermfg=253     ctermbg=236
+hi ColorColumn      cterm=NONE      ctermfg=253     ctermbg=232
 
 "" Specials
 hi Directory        cterm=NONE      ctermfg=39

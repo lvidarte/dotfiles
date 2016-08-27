@@ -105,9 +105,11 @@ autocmd BufNewFile,BufRead *.ino,*.pde set filetype=cpp
 " Jade
 autocmd BufNewFile,BufRead *.jade set filetype=jade
 " HTML
-autocmd BufNewFile,BufRead *.html set filetype=html.javascript ts=2 sts=2 sw=2
+autocmd BufNewFile,BufRead *.html set filetype=html.javascript ts=4 sts=4 sw=4
+" SASS
+autocmd BufNewFile,BufRead *.sass set filetype=sass.css ts=4 sts=4 sw=4
 " JS
-autocmd BufNewFile,BufRead *.js set filetype=javascript ts=2 sts=2 sw=2
+autocmd BufNewFile,BufRead *.js set filetype=javascript ts=4 sts=4 sw=4
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -162,6 +164,7 @@ nmap <S-l> <C-w>>
 nmap <silent> <C-_> :set cursorline!<CR>
 
 " Highlight actual column
+let &colorcolumn=join(range(101,999),",")
 nmap <silent> ,cc :set cursorcolumn!<CR>
 
 " Save as sudo
