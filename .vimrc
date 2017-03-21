@@ -5,7 +5,11 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'bling/vim-airline'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'moll/vim-bbye'
@@ -13,6 +17,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'fatih/vim-go'
+Plugin 'Shougo/neocomplete.vim'
 "SnipMate
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -114,6 +119,7 @@ autocmd BufNewFile,BufRead *.js set filetype=javascript ts=4 sts=4 sw=4
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'dark'
 
 " NerdTree
 map <F3> :NERDTreeToggle<CR>
@@ -164,7 +170,7 @@ nmap <S-l> <C-w>>
 nmap <silent> <C-_> :set cursorline!<CR>
 
 " Highlight actual column
-let &colorcolumn=join(range(101,999),",")
+"let &colorcolumn=join(range(102,999),",")
 nmap <silent> ,cc :set cursorcolumn!<CR>
 
 " Save as sudo
@@ -176,6 +182,9 @@ map <leader>t :w\|:!phpunit --colors %<CR>
 map <leader>l :w\|:!php -S localhost:3005<CR>
 map <leader>c :w\|:!php -l %<CR>
 map <leader>f :w\|:!php-cs-fixer fix % --level=all<CR>
+
+" Go
+map <leader>g :w\|:!go run %<CR>
 
 " GitGutter
 let g:gitgutter_max_signs = 2000

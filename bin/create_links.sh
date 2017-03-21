@@ -2,6 +2,7 @@
 
 for FILE in $(find . -maxdepth 1 -name '\.[^\.]*')
 do
-    test "$FILE" != ".git" \
-        && ln -s $PWD/$FILE ~/
+    DOTFILE=$(echo $FILE | sed 's/\.\///' -)
+    test "$DOTFILE" != ".git" \
+        && ln -s $PWD/$DOTFILE ~/
 done

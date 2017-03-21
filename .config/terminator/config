@@ -1,53 +1,54 @@
 [global_config]
-  handle_size = 3
-  title_hide_sizetext = True
-  geometry_hinting = False
-  title_inactive_fg_color = "#b5b5b5"
-  suppress_multiple_term_dialog = True
   enabled_plugins = ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
-  title_receive_bg_color = "#300a24"
-  title_transmit_bg_color = "#1275ff"
-  tab_position = bottom
+  geometry_hinting = False
+  handle_size = 3
   inactive_color_offset = 1.0
+  suppress_multiple_term_dialog = True
+  tab_position = bottom
+  title_hide_sizetext = True
   title_inactive_bg_color = "#433e2b"
+  title_inactive_fg_color = "#b5b5b5"
+  title_receive_bg_color = "#300a24"
+  title_transmit_bg_color = "#4084d6"
 [keybindings]
-  toggle_zoom = <Primary><Shift>z
-  scaled_zoom = None
-  group_all = None
-  go_up = <Ctrl><Shift>k
-  resize_up = <Ctrl><Shift><Alt>k
-  broadcast_group = <Ctrl><Shift>g
-  resize_left = <Ctrl><Shift><Alt>h
-  go_prev = None
   broadcast_all = <Ctrl><Shift>a
-  go_down = <Ctrl><Shift>j
-  go_right = <Ctrl><Shift>l
+  broadcast_group = <Ctrl><Shift>g
   broadcast_off = <Ctrl><Shift>n
-  go_next = None
+  go_down = <Ctrl><Shift>j
   go_left = <Ctrl><Shift>h
-  resize_right = <Ctrl><Shift><Alt>l
+  go_next = None
+  go_prev = None
+  go_right = <Ctrl><Shift>l
+  go_up = <Ctrl><Shift>k
+  group_all = None
   resize_down = <Ctrl><Shift><Alt>j
+  resize_left = <Ctrl><Shift><Alt>h
+  resize_right = <Ctrl><Shift><Alt>l
+  resize_up = <Ctrl><Shift><Alt>k
+  scaled_zoom = None
+  toggle_zoom = <Primary><Shift>z
   ungroup_all = None
-[profiles]
-  [[default]]
-    scrollbar_position = hidden
-    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
-    font = Ubuntu Mono derivative Powerline 12
-    visible_bell = True
-    background_image = None
-    scrollback_lines = 5000
-    use_system_font = False
-    cursor_color = "#1275ff"
-    foreground_color = "#ffffff"
-    update_records = False
-    copy_on_selection = True
 [layouts]
   [[default]]
     [[[child1]]]
-      type = Terminal
       parent = window0
       profile = default
+      type = Terminal
     [[[window0]]]
-      type = Window
       parent = ""
+      type = Window
 [plugins]
+[profiles]
+  [[default]]
+    background_color = "#252c3c"
+    background_image = None
+    copy_on_selection = True
+    cursor_color = "#1275ff"
+    font = Ubuntu Mono derivative Powerline 14
+    foreground_color = "#ffffff"
+    palette = "#000000:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    scrollback_lines = 5000
+    scrollbar_position = hidden
+    update_records = False
+    use_system_font = False
+    visible_bell = True

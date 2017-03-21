@@ -28,3 +28,7 @@
 [core]
 	autocrlf = input
 # vim: set noexpandtab :
+[credentials]
+	helper = cache
+[credential]
+	helper = store

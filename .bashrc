@@ -9,7 +9,7 @@ case $- in
 esac
 
 export PYTHONSTARTUP=$HOME/.pythonrc
-export PATH=~/bin:~/go/bin:$PATH
+#export PATH=~/bin:~/go/bin:$PATH
 export GOPATH=~/go
 export SSH_USER=xleo
 export EDITOR=/usr/bin/vim.nox
@@ -133,27 +133,13 @@ if ! shopt -oq posix; then
 fi
 
 # Functions
-function mkcd () { mkdir -p $1 && cd $1; }
+function mkcd () {
+    mkdir -p $1 && cd $1;
+}
 
-function ssh-aws ()
-{
-    ssh -i /home/xleo/.ssh/it-coquelux.pem ubuntu@$1 2>/dev/null
-}
-function ssh-ecs ()
-{
-    ssh -i /home/xleo/.ssh/it-coquelux.pem ec2-user@$1
-}
-function scp-from-aws ()
-{
-    scp -i /home/xleo/.ssh/it-coquelux.pem -r ubuntu@$@
-}
-function scp-to-aws ()
-{
-    scp -i /home/xleo/.ssh/it-coquelux.pem -r $1 ubuntu@$2
-}
 function xc()
 {
-    FILE=`mktemp`
+    local FILE=`mktemp`
     xclip -o > $FILE \
         && vim $FILE \
         && cat $FILE | xclip -selection clipboard \
@@ -163,67 +149,22 @@ function cat-to-clipboard()
 {
     cat $1 | xclip -selection clipboard
 }
-function ssh-remove-key()
+function git-clone-branch()
 {
-    local LINE=$1
-    sed -i ${LINE}d $HOME/.ssh/known_hosts
+    local BRANCH=$1
+    git clone -b $BRANCH https://leonardo.vidarte@wdgit-tx.corp.globant.com/git/FOR000 $BRANCH
 }
-function r()
+function git-delete-branch()
 {
-    local DIR=/tmp/ranger-last-dir
-    ranger --choosedir=$DIR $@
-    cd `cat $DIR`
+    local BRANCH=$1
+    git push origin --delete $BRANCH
 }
-function opencv2-compile()
+function git-fetch-branch()
 {
-    g++ -g -o ${1%.*} $1 \
-        -I/opt/opencv/2.4.11/include \
-        -L/opt/opencv/2.4.11/lib \
-        -lopencv_calib3d \
-        -lopencv_contrib \
-        -lopencv_core \
-        -lopencv_features2d \
-        -lopencv_flann \
-        -lopencv_gpu \
-        -lopencv_highgui \
-        -lopencv_imgproc \
-        -lopencv_legacy \
-        -lopencv_ml \
-        -lopencv_nonfree \
-        -lopencv_objdetect \
-        -lopencv_ocl \
-        -lopencv_photo \
-        -lopencv_stitching \
-        -lopencv_superres \
-        -lopencv_ts \
-        -lopencv_video \
-        -lopencv_videostab
+    local BRANCH=$1
+    git fetch origin $BRANCH:$BRANCH && git checkout $BRANCH
 }
-function opencv3-compile()
+function up ()
 {
-    g++ -g -o ${1%.*} $1 \
-        -I/opt/opencv/3.0.0/include \
-        -L/opt/opencv/3.0.0/lib/ \
-        -lopencv_calib3d \
-        -lopencv_core \
-        -lopencv_features2d \
-        -lopencv_flann \
-        -lopencv_highgui \
-        -lopencv_imgcodecs \
-        -lopencv_imgproc \
-        -lopencv_ml \
-        -lopencv_objdetect \
-        -lopencv_photo \
-        -lopencv_shape \
-        -lopencv_stitching \
-        -lopencv_superres \
-        -lopencv_videoio \
-        -lopencv_video \
-        -lopencv_videostab
+    for i in `seq 1 $1`; do cd ../; done
 }
-
-PATH="/home/xleo/perl5/bin${PATH+:}${PATH}"; export PATH;
-PERL5LIB="/home/xleo/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/xleo/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/xleo/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/xleo/perl5"; export PERL_MM_OPT;

@@ -18,8 +18,8 @@ let colors_name = "notangotan"
 " Default Colors
 "hi Normal           cterm=NONE      ctermfg=7       ctermbg=232
 hi Normal           cterm=NONE      ctermfg=7
-hi NonText          cterm=NONE      ctermfg=236
-hi LineNR           cterm=NONE      ctermfg=245     ctermbg=233
+hi NonText          cterm=NONE      ctermfg=238
+hi LineNR           cterm=NONE      ctermfg=242     ctermbg=234
 "hi Cursor       guibg=#d3d7cf
 "hi lCursor      guibg=#d3d7cf
 
@@ -41,7 +41,7 @@ hi Visual           cterm=reverse   ctermfg=230     ctermbg=238
 hi TabLine          cterm=NONE      ctermfg=243     ctermbg=234
 hi TabSel           cterm=bold      ctermfg=7       ctermbg=232
 hi TabLineFill      cterm=reverse   ctermfg=234     ctermbg=236
-hi ColorColumn      cterm=NONE      ctermfg=253     ctermbg=232
+hi ColorColumn      cterm=NONE      ctermfg=253     ctermbg=234
 
 "" Specials
 hi Directory        cterm=NONE      ctermfg=39
@@ -63,7 +63,7 @@ hi PreProc          cterm=NONE      ctermfg=208
 hi Comment          cterm=NONE      ctermfg=244
 hi Type             cterm=bold      ctermfg=70
 hi Special          cterm=NONE      ctermfg=82
-hi SpecialKey       cterm=NONE      ctermfg=236
+hi SpecialKey       cterm=NONE      ctermfg=238
 hi Structure        cterm=NONE      ctermfg=82
 hi Error            cterm=NONE      ctermfg=white       ctermbg=DarkRed
 hi SpellBad         cterm=NONE      ctermfg=white       ctermbg=DarkRed
