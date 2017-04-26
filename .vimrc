@@ -1,3 +1,5 @@
+set shell=bash
+
 set nocompatible
 filetype off
 
@@ -16,8 +18,11 @@ Plugin 'moll/vim-bbye'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
+
+" Vim-Go
 Plugin 'fatih/vim-go'
 Plugin 'Shougo/neocomplete.vim'
+
 "SnipMate
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -26,6 +31,9 @@ Plugin 'garbas/vim-snipmate'
 call vundle#end()
 filetype plugin indent on
 
+" This remove the preview window for autocomplete
+" set completeopt=preview, menu  <---- this is the default
+set completeopt=menu
 
 " Dont like *.swp files
 set nobackup
@@ -134,6 +142,9 @@ endif
 let g:NERDTreeWinPos = "right"
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.pyc$', '\~$']
+
+" NeoComplete
+let g:neocomplete#enable_at_startup = 1
 
 " FuzzyFinder
 nnoremap <silent> sj :FufBuffer<CR>

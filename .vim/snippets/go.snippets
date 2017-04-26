@@ -1,0 +1,276 @@
+
+snippet v
+	${1} := ${2}
+
+snippet vr
+	var ${1:t} ${2:string}
+
+snippet var
+	var ${1} ${2} = ${3:nil}
+
+snippet vs
+	var (
+		${1} ${2} = ${3}
+	)
+
+snippet append
+	append(${1:slice}, ${2:value})
+
+snippet chan
+	chan ${1:T}
+
+snippet const
+	const (
+		${1:NAME1} = iota
+		${2:NAME2}
+	)
+
+snippet import
+	import (
+		"${1:package}"
+	)
+
+snippet iface
+	interface{}
+
+snippet if
+	if ${1:/* condition */} {
+		${2}
+	}
+
+snippet else
+	else {
+		${1}
+	}
+
+snippet ife
+	if err != nil {
+		${1:return err}
+	}
+
+snippet iri
+	if err:= ${1}; err != nil {
+		${2}
+	}
+
+snippet irf
+	if err != nil {
+		log.Fatal(err)
+	}
+
+snippet ie
+	if ${1:/* condition */} {
+		${2}
+	} else {
+		${3}
+	}
+
+snippet for
+	for ${1:k}, ${2:v} := range ${3} {
+		${4}
+	}
+
+snippet fori
+	for ${1:i} := 0; $1 < ${2:count}; $1${3:+=1} {
+		${3}
+	}
+
+snippet defer
+	defer ${1:func}()
+
+snippet deferf
+	defer func() {
+		if err := recover(); err != nil {
+			${1}
+		}
+	}()
+
+# Functions
+
+snippet func
+	func ${1:funcName}(${2}) ${3:error} {
+		return ${4:nil}
+	}
+
+snippet method
+	func (${1:s} *${2:Type}) ${3:fName}(${4:arg}) ${5:error} {
+		${5:return nil}
+	}
+
+snippet make
+	make(${1:[]atype}, ${2:0})
+
+snippet map
+	map[${1:keyType}]${2:valType}
+
+snippet new
+	new(${1:type})
+
+snippet panic
+	panic("${1:msg}")
+
+snippet log
+	log.Println("${1}")
+
+snippet logf
+	log.Printf("%${1:s}", ${2:var})
+
+snippet print
+	fmt.Printf("%${1:s}\n", ${2:var})
+
+snippet prn
+	fmt.Println(${1:var})
+
+snippet sp
+	fmt.Sprintf("%${1:s}", ${2:var})
+
+snippet select
+	select {
+	case ${1:v1} := <-${2:chan1}
+		${3}
+	case ${4:v2} := <-${5:chan2}
+		${6}
+	default:
+		${7}
+	}
+
+snippet interface
+	type ${1:name} interface {
+		${2:/* methods */}
+	}
+
+snippet struct
+	type ${1:name} struct {
+		${2}
+	}
+
+snippet switch
+	switch ${1:var} {
+	case ${2:value1}:
+		${3}
+	case ${4:value2}:
+		${5}
+	default:
+		${6}
+	}
+
+snippet case
+	case ${1:value}:
+		${2}
+
+snippet go
+	go func(${1} ${2:type}) {
+		${3:/* code */}
+	}(${4})
+
+#
+# Play
+#
+#
+
+snippet ma
+	func main() {
+		${1}
+	}
+
+snippet main
+	package main
+
+	import (
+			"fmt"
+	)
+
+	func main() {
+		fmt.Println("${1:hello}")
+	}
+
+#
+# Testing
+#
+
+snippet test
+	package ${0:}
+
+	import (
+			"testing"
+	)
+	func Test${1:name}(t *testing.T) {
+		${2}
+	}
+
+snippet Tfn
+	func Test${1:name}(t *testing.T) {
+		${2}
+	}
+snippet t.E
+	t.Error("\nExp", ${1:exp}, "\nGot", ${2:got})
+
+snippet Tif
+	exp := ${1:hello}
+	if got != exp {
+		t.Errorf("\nExp: %v\nGot: %v", exp, got)
+	}
+
+snippet Tifr
+	exp := ${1:hello}
+	if !reflect.DeepEqual(got, exp) {
+		t.Errorf("\nExp: %v\nGot: %v", exp, got)
+	}
+
+snippet Tcas
+
+	cases := []struct {
+		exp, got ${1:type}
+	}{
+		{
+			${1:values}
+		},
+	}
+
+	for _, c := range cases {
+		
+		exp := c.exp
+		got := fn(c.got)
+
+		if !reflect.DeepEqual(got, exp) {
+			t.Errorf("\nExp: %v\nGot: %v", exp, got)
+		}
+	}
+
+snippet Isort
+
+	type sortable struct {
+		m []type
+	}
+
+	func (s *sortable) Len() int {
+		return len(s.m)
+	}
+
+	func (s *sortable) Swap(i, j int) {
+		s.m[i], s.m[j] = s.m[j], s.m[i]
+	}
+
+	func (s *sortable) Less(i, j int) bool {
+		return string(s.m[i]) < string(s.m[j])
+	}
+
+snippet Iomap
+	ordered := make([]int, 0, len(sourceMap))
+	for r, _ := range sourceMap {
+		ordered = append(ordered, r)
+	}
+
+	sort.Sort(&sortable{ordered})
+
+snippet scan
+	s := bufio.NewScanner(os.Stdin)
+	s.Split(bufio.ScanLines)
+
+	for s.Scan() {
+		line := s.Text()
+	}
+
+	if err := scanner.Err(); err != nil {
+		log.Println("input scanner:", err)
+	}
