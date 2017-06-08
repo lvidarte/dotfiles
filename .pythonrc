@@ -8,8 +8,9 @@
 # Note that PYTHONSTARTUP does *not* expand "~", so you have to put in the
 # full path to your home directory.
 
-import atexit
 import os
+import sys
+import atexit
 import readline
 import rlcompleter
 
@@ -25,7 +26,18 @@ def save_history(historyPath=historyPath):
 if os.path.exists(historyPath):
     readline.read_history_file(historyPath)
 
+if os.getenv('TERM') in ('xterm', 'vt100', 'rxvt', 'Eterm', 'putty'):
+    try:
+        import readline
+    except ImportError:
+        sys.ps1 = '\033[0;31m>>> \033[0m'
+        sys.ps2 = '\033[0;31m... \033[0m'
+    else:
+        sys.ps1 = '\001\033[0;31m\002>>> \001\033[0m\002'
+        sys.ps2 = '\001\033[0;31m\002... \001\033[0m\002'
+        del readline
+
 atexit.register(save_history)
-del os, atexit, readline, rlcompleter, save_history, historyPath
+del os, sys, atexit, rlcompleter, save_history, historyPath
 
 # vim:syntax=python
