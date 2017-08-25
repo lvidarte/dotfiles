@@ -18,7 +18,6 @@ Plugin 'moll/vim-bbye'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
-
 " Vim-Go
 Plugin 'fatih/vim-go'
 Plugin 'Shougo/neocomplete.vim'
@@ -27,6 +26,8 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
+
+"vim +PluginInstall +qall
 
 call vundle#end()
 filetype plugin indent on
@@ -176,6 +177,9 @@ nmap <S-l> <C-w>>
 
 " Check php file syntax
 "map <C-b> :! php -l %<CR>
+
+" Build
+nnoremap <C-b> :!make<CR>
 
 " Underline actual line
 nmap <silent> <C-_> :set cursorline!<CR>

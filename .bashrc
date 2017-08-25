@@ -132,12 +132,20 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# ================================
 # Functions
+# ================================
 function mkcd () {
     mkdir -p $1 && cd $1;
 }
 
-function xc()
+function r () {
+    local LASTDIR=`mktemp`
+    ranger --choosedir=$LASTDIR && cd `cat $LASTDIR`
+    rm $LASTDIR
+}
+
+function xc ()
 {
     local FILE=`mktemp`
     xclip -o > $FILE \
@@ -145,25 +153,30 @@ function xc()
         && cat $FILE | xclip -selection clipboard \
         && rm -f $FILE
 }
-function cat-to-clipboard()
+
+function cat-to-clipboard ()
 {
     cat $1 | xclip -selection clipboard
 }
+
 function git-clone-branch()
 {
     local BRANCH=$1
     git clone -b $BRANCH https://leonardo.vidarte@wdgit-tx.corp.globant.com/git/FOR000 $BRANCH
 }
+
 function git-delete-branch()
 {
     local BRANCH=$1
     git push origin --delete $BRANCH
 }
+
 function git-fetch-branch()
 {
     local BRANCH=$1
     git fetch origin $BRANCH:$BRANCH && git checkout $BRANCH
 }
+
 function up ()
 {
     for i in `seq 1 $1`; do cd ../; done
